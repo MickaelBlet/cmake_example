@@ -3,6 +3,7 @@ project(library CXX)
 
 add_subdirectory(lib0)
 add_subdirectory(lib1)
+# add_subdirectory(test)
 
 # create config package
 file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
