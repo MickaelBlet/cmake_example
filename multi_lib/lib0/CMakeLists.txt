@@ -2,10 +2,10 @@ cmake_minimum_required(VERSION 2.6)
 project("${PROJECT_NAME}0" CXX)
 
 include_directories(
-    "${CMAKE_CURRENT_SOURCE_DIR}/include"
+    "include"
 )
 
-file(GLOB SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
+file(GLOB SOURCES "src/*.cpp")
 
 add_library("${PROJECT_NAME}" SHARED ${SOURCES})
 target_compile_options("${PROJECT_NAME}"
@@ -21,6 +21,7 @@ set_target_properties("${PROJECT_NAME}"
         CXX_STANDARD 98
         CXX_STANDARD_REQUIRED ON
         CXX_EXTENSIONS OFF
+        NO_SYSTEM_FROM_IMPORTED ON
         PUBLIC_HEADER "include/example0.h"
 )
 
