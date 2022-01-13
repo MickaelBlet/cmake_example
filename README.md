@@ -1,1 +1,1 @@
-# cmake_example
+# CMake example
