@@ -23,15 +23,13 @@ set_target_properties("${PROJECT_NAME}"
         CXX_EXTENSIONS OFF
         NO_SYSTEM_FROM_IMPORTED ON
         PUBLIC_HEADER "include/example0.h"
+        INTERFACE_INCLUDE_DIRECTORIES "$<BUILD_INTERFACE:include/${PROJECT_NAME}>;$<INSTALL_INTERFACE:include/${PROJECT_NAME}>"
 )
 
 # create package
 # config
 file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
-"include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}Targets.cmake\")
-set_property(TARGET ${PROJECT_NAME}
-             APPEND PROPERTY INTERFACE_INCLUDE_DIRECTORIES \"\${CMAKE_CURRENT_LIST_DIR}/../../include/${PROJECT_NAME}\")"
-)
+"include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}Targets.cmake\")")
 
 # target
 install(TARGETS "${PROJECT_NAME}" EXPORT "${PROJECT_NAME}Targets"
