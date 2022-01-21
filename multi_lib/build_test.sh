@@ -7,7 +7,7 @@ pushd test
 rm -rf build
 mkdir build
 pushd build
-cmake -DCMAKE_INSTALL_PREFIX="$(pwd)" -DCMAKE_PREFIX_PATH="$(pwd)/../../build/lib" -j ..
+cmake -DCMAKE_FIND_DEBUG_MODE=ON -DCMAKE_INSTALL_PREFIX="$(pwd)" -DCMAKE_PREFIX_PATH="$(pwd)/../../build" -j ..
 make VERBOSE=1 -j
 popd
 popd

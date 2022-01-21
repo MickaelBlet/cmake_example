@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.6)
 project(test_library CXX)
 
 # list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../build/lib")
-find_package(library REQUIRED COMPONENTS 0 1)# PATHS "${CMAKE_CURRENT_SOURCE_DIR}/../build/lib/cmake")
+find_package(library QUIET COMPONENTS 0 1)# PATHS "${CMAKE_CURRENT_SOURCE_DIR}/../build/lib/cmake")
 
 include_directories(
     "include"

@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 2.6)
-project("${PROJECT_NAME}0" CXX)
+
+set(PARENT_PROJECT_NAME library)
+
+project("library0" CXX)
 
 include_directories(
     "include"
@@ -41,9 +44,8 @@ install(TARGETS "${PROJECT_NAME}" EXPORT "${PROJECT_NAME}Targets"
 )
 install(EXPORT "${PROJECT_NAME}Targets"
         FILE "${PROJECT_NAME}Targets.cmake"
-        DESTINATION "lib/cmake"
+        DESTINATION "lib/cmake/${PARENT_PROJECT_NAME}"
 )
-install(FILES
-        "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
-        DESTINATION "lib/cmake"
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
+        DESTINATION "lib/cmake/${PARENT_PROJECT_NAME}"
 )
